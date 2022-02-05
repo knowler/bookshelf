@@ -1,0 +1,47 @@
+{
+  "version": "300de5f2",
+  "entry": {
+    "module": "/build/entry.client-QGBPQNAT.js",
+    "imports": [
+      "/build/_shared/chunk-OY3WXFFH.js"
+    ]
+  },
+  "routes": {
+    "root": {
+      "id": "root",
+      "path": "",
+      "module": "/build/root-TNZIPFVX.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/index": {
+      "id": "routes/index",
+      "parentId": "root",
+      "index": true,
+      "module": "/build/routes/index-Q5L7WATY.js",
+      "imports": [
+        "/build/_shared/chunk-HXNTBFMR.js"
+      ],
+      "hasAction": false,
+      "hasLoader": true,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    },
+    "routes/new": {
+      "id": "routes/new",
+      "parentId": "root",
+      "path": "new",
+      "module": "/build/routes/new-NLGUQWS2.js",
+      "imports": [
+        "/build/_shared/chunk-HXNTBFMR.js"
+      ],
+      "hasAction": true,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
+    }
+  },
+  "url": "/build/manifest-300DE5F2.js"
+}
