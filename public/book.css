@@ -1,0 +1,28 @@
+@media (prefers-reduced-motion: no-preference) {
+  h1,
+  h1 > small,
+  button {
+    opacity: 0;
+    filter: blur(10px);
+    animation: wipeInlineStart 1200ms forwards;
+  }
+
+  h1 {
+    animation-delay: 200ms;
+  }
+
+  h1 > small {
+    animation-delay: 400ms;
+  }
+
+  button {
+    animation-delay: 1200ms;
+  }
+
+  @keyframes wipeInlineStart {
+    to {
+      opacity: 1;
+      filter: none;
+    }
+  }
+}

@@ -1,22 +1,20 @@
-import { ActionFunction, Form, json, redirect, useActionData } from "remix";
+import { ActionFunction, Form, redirect } from "remix";
 import { db } from "~/db.server";
 
 export const action: ActionFunction = async ({ request }) => {
   const form = await request.formData();
 
-  await db.book.create({
+  const book = await db.book.create({
     data: {
       title: form.get("title") as string,
       author: form.get("author") as string,
     },
   });
 
-  return redirect("/");
+  return redirect(`/books/${book.id}`);
 };
 
 export default function NewBook() {
-  const actionData = useActionData();
-
   return (
     <Form method="post">
       <label>

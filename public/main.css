@@ -30,7 +30,7 @@ ul {
   padding-inline-start: 0;
 }
 
-li {
+li > a {
   box-shadow: 0 0.125rem 0.5em 0.25rem rgb(0 0 0 / 0.1);
   background-color: #000;
   color: #fff;
@@ -40,6 +40,16 @@ li {
   justify-content: space-between;
   padding: 1rem;
   text-align: center;
+  text-decoration: none;
+  transition: transform 100ms ease-in;
+}
+
+li:nth-of-type(odd) > a:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+li:nth-of-type(even) > a:hover {
+  transform: scale(1.03) rotate(-1deg);
 }
 
 .title {
