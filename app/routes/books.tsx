@@ -1,9 +1,14 @@
 import { Book } from "@prisma/client";
-import { Link, LoaderFunction, useLoaderData } from "remix";
+import { MetaFunction } from "@remix-run/react/routeModules";
+import { Link, LoaderFunction, Outlet, useLoaderData } from "remix";
 import { db } from "~/db.server";
 
+export const meta: MetaFunction = () => ({
+  title: "Bookshelf | Books",
+});
+
 type LoaderData = {
-  books: Array<Book>;
+  books: Array<Pick<Book, "id" | "title" | "author">>;
 };
 
 export const loader: LoaderFunction = async () => {
@@ -24,19 +29,28 @@ export default function Index() {
   const data = useLoaderData<LoaderData>();
 
   return (
-    <main>
-      <h1>Bookshelf</h1>
-      <Link to="new">Add Book</Link>
-      <ul>
-        {data.books.map((book) => (
-          <li key={book.id}>
-            <Link to={book.id.toString()}>
-              <span className="title">{book.title}</span>
-              <span className="author">{book.author}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <>
+      <header>
+        <h1>Bookshelf</h1>
+        <nav aria-label="primary">
+          <Link to="/books/new">Add Book</Link>
+        </nav>
+      </header>
+      <main>
+        <article>
+          <ul>
+            {data.books.map((book) => (
+              <li key={book.id}>
+                <Link to={book.id.toString()}>
+                  <span className="title">{book.title}</span>
+                  <span className="author">{book.author}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </article>
+        <Outlet />
+      </main>
+    </>
   );
 }

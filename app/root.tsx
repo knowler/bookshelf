@@ -15,7 +15,7 @@ export const meta: MetaFunction = () => {
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en-ca">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -26,7 +26,7 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <LiveReload />
       </body>
     </html>
   );
