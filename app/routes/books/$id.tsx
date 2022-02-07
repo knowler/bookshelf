@@ -7,7 +7,7 @@ type LoaderData = {
 };
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const book = await db.book.findUnique({ where: { id: Number(params.id) } });
+  const book = await db.book.findUnique({ where: { id: params.id } });
   if (!book)
     throw new Response(`Cannot find a book with the id of ${params.id}`, {
       status: 404,

@@ -20,7 +20,7 @@ export const meta: MetaFunction = ({ parentsData }) => ({
 export const action: ActionFunction = async ({ request, params }) => {
   switch (request.method) {
     case "DELETE":
-      await db.book.delete({ where: { id: Number(params.id) } });
+      await db.book.delete({ where: { id: params.id } });
       return redirect("/books");
     default:
       return new Response("Unsupported method.", { status: 405 });

@@ -18,13 +18,13 @@ export const meta: MetaFunction = ({ parentsData }) => ({
 export const action: ActionFunction = async ({ request, params }) => {
   switch (request.method) {
     case "DELETE": {
-      await db.book.delete({ where: { id: Number(params.id) } });
+      await db.book.delete({ where: { id: params.id } });
       return redirect("/books");
     }
     case "PATCH": {
       const formData = await request.formData();
       await db.book.update({
-        where: { id: Number(params.id) },
+        where: { id: params.id },
         data: {
           title: formData.get("title") as string,
           author: formData.get("author") as string,

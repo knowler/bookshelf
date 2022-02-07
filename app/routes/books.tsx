@@ -41,7 +41,7 @@ export default function Index() {
           <ul>
             {data.books.map((book) => (
               <li key={book.id}>
-                <Link to={book.id.toString()}>
+                <Link to={book.id}>
                   <span className="title">{book.title}</span>
                   <span className="author">{book.author}</span>
                 </Link>
