@@ -1,6 +1,7 @@
 import { Link, Outlet, useLoaderData } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 import { Book } from "@prisma/client";
+import ThemeSelector from "~/components/ThemeSelector";
 import { db } from "~/db.server";
 
 export const meta: MetaFunction = () => ({
@@ -51,6 +52,9 @@ export default function Index() {
         </article>
         <Outlet />
       </main>
+      <footer>
+        <ThemeSelector />
+      </footer>
     </>
   );
 }

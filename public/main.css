@@ -175,3 +175,49 @@ aside :any-link:not([class]) {
 .dismiss:hover {
   transform: scale(1.05);
 }
+
+footer {
+  padding: 1rem;
+}
+
+.themeSelector {
+  position: relative;
+  display: inline-block;
+  border: 0.125em solid #000;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+}
+
+.themeSelector button {
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  padding-block: 0.375em;
+  padding-inline: 0.5em;
+  font-size: 1em;
+  transition-timing-function: ease-in;
+  transition-duration: 160ms;
+  transition-property: background-color, color;
+}
+
+.themeSelector button:focus {
+  position: relative;
+  outline-offset: 0;
+}
+
+.themeSelector button[aria-pressed="true"] {
+  background-color: #fff;
+  color: #000;
+}
+
+.themeSelector button:first-of-type {
+  padding-inline-start: 0.75em;
+  border-start-start-radius: inherit;
+  border-end-start-radius: inherit;
+}
+
+.themeSelector button:last-of-type {
+  padding-inline-end: 0.75em;
+  border-start-end-radius: inherit;
+  border-end-end-radius: inherit;
+}
