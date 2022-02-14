@@ -1,6 +1,6 @@
+import { Link, Outlet, useLoaderData } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 import { Book } from "@prisma/client";
-import { MetaFunction } from "@remix-run/react/routeModules";
-import { Link, LoaderFunction, Outlet, useLoaderData } from "remix";
 import { db } from "~/db.server";
 
 export const meta: MetaFunction = () => ({
